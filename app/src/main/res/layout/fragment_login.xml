@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/tvLoginMarginTop"
+        android:fontFamily="@font/ramadhan"
+        android:textSize="@dimen/tvLogin"
+        android:text="@string/tvLogin"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/InInTextInputLayout"
+        android:id="@+id/tilNombreUsuario"
+        app:errorEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_height="wrap_content">
+        <!--
+        android:textColorHint="@color/textInputLayout"
+        android:background="@color/til"
+        -->
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/tilNombreUsuario"
+            android:textColorHint="@color/color_secondary"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInputLayoutStyle"
+        android:id="@+id/tilContrasena"
+        app:errorEnabled="true"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5dp"
+        app:passwordToggleEnabled="true"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/tilContrasena" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="40dp"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/textInputLayout"
+            android:text="CheckBox" />
+
+        <Button
+            style="@style/ButtonTransparent.TextColor"
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_weight="0.2"
+            android:text="@string/btnRegistrar"/>
+        <!-- android:backgroundTint="@color/white" -->
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/textInputLayout"
+        android:text="@string/btnLogin"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center|bottom"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Iniciar sesión con otras plataformas"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:background="@color/color_transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/google"/>
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:background="@color/color_transparent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/facebook"/>
+
+        </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

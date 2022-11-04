@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tblDashBoard"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="0, 2"
+    android:gravity="center"
+    tools:context=".DashBoardFragment">
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <ImageButton
+            android:id="@+id/imbInventario"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:contentDescription="@string/action_dashboard"
+            android:scaleType="fitCenter"
+            android:src="@drawable/inventario" />
+
+        <View
+            android:layout_height="20dp"
+            android:layout_width="20dp"/>
+
+        <ImageButton
+            android:id="@+id/imbDependencia"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/action_dashboard"
+            android:src="@drawable/dependencia" />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imbIncidencias"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/action_dashboard"
+            android:src="@drawable/incidencias" />
+        <View
+            android:layout_height="20dp"
+            android:layout_width="20dp"/>
+
+        <ImageButton
+            android:id="@+id/imbPedidos"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/action_dashboard"
+            android:src="@drawable/pedidos" />
+
+    </TableRow>
+
+    <TableRow
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imbPreferencias"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/action_dashboard"
+            android:src="@drawable/preferencias" />
+        <View
+            android:layout_height="20dp"
+            android:layout_width="20dp"/>
+
+        <ImageButton
+            android:id="@+id/imbAyuda"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/action_dashboard"
+            android:src="@drawable/ayuda" />
+    </TableRow>
+
+</TableLayout>

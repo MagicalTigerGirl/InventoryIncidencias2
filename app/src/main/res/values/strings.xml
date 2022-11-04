@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">InventoryIncidencias</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="tvAppName">Hola caracola</string>
+    <string name="tvLogin">Login</string>
+    <string name="tilNombreUsuario">Nombre de usuario:</string>
+    <string name="tilContrasena">Contraseña: </string>
+    <string name="btnRegistrar">REGISTRAR</string>
+    <string name="btnLogin">LOGIN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tvTitleSignUp">Sign Up</string>
+    <string name="tilUsuario">Introduce un nombre de usuario:</string>
+    <string name="tilEmail">Introduce un email:</string>
+    <string name="tilPassword">Introduce una contraseña:</string>
+    <string name="tilConfirmPassword">Introduce de nuevo la contraseña:</string>
+    <string name="chbTerms">Acepto los términos</string>
+    <string name="chbSubscription">Acepto que me envien emails de información</string>
+    <string name="signup_fragment_label">SignUp Fragment</string>
+    <string name="fab">Botón OK</string>
+    <string name="splash_fragment_label">Splash Fragment</string>
+    <string name="login_fragment_label">Login Fragment</string>
+    <string name="action_dashboard">Botón de acción Dashboard</string>
+    <string name="dashboard_fragment_label">Dashboard Fragment</string>
+    <string name="tvCreated">Fecha de creación:</string>
+    <string name="tvActivated">Fecha de activación:</string>
+    <string name="tvEnded">Fecha de finalización:</string>
+    <string name="tvEdit">Edición</string>
+</resources>

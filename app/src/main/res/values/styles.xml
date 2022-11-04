@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Estilo de los botones que tengan fondo transparente -->
+    <!--<style name="ButtonTransparentTextColorBlack" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/color_secondary</item>                 anulamos background por completo
+    </style> -->
+    <style name="ButtonTransparent">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <style name="ButtonTransparent.TextColor">
+        <item name="android:textColor">@color/color_secondary</item>                <!-- anulamos background por completo -->
+    </style>
+    <!-- Este estilo hereda de ButtonTransparent al indicarlo con el nombre. También se puede utilizar el atributo parent -->
+    <style name="ButtonBackgroundAccent">
+        <item name="android:backgroundTint">@color/color_secondary</item>
+    </style>
+
+    <style name="InInTextInputLayout">
+        <item name="android:background">@drawable/shape_textinputlayout</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxStrokeColor">@color/color_secondary</item>
+        <item name="hintTextColor">@color/color_secondary</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/color_secondary</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="hintTextColor">@color/color_secondary</item>
+    </style>
+</resources>
