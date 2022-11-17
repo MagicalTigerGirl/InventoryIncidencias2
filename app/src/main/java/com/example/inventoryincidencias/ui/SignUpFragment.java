@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias;
+package com.example.inventoryincidencias.ui;
 
 import android.os.Bundle;
 

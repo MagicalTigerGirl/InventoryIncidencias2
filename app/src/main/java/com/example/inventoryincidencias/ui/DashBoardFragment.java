@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias;
+package com.example.inventoryincidencias.ui;
 
 import static com.example.inventoryincidencias.R.id.action_LoginFragment_to_SignUpFragment;
 
@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.inventoryincidencias.R;
 import com.example.inventoryincidencias.databinding.FragmentDashBoardBinding;
 import com.example.inventoryincidencias.databinding.FragmentSignUpBinding;
 
@@ -38,6 +39,7 @@ public class DashBoardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.imbInventario.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_dashBoardFragment_to_settingInventoryFragment));
+        binding.imbDependencia.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_dashBoardFragment_to_dependencyListFragment));
     }
 
     @Override

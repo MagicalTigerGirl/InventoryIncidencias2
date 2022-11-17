@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:stretchColumns="0, 2"
     android:gravity="center"
-    tools:context=".DashBoardFragment">
+    tools:context=".ui.DashBoardFragment">
 
     <TableRow
         android:gravity="center"

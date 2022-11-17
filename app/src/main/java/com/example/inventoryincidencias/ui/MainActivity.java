@@ -1,7 +1,8 @@
-package com.example.inventoryincidencias;
+package com.example.inventoryincidencias.ui;
 
 import android.os.Bundle;
 
+import com.example.inventoryincidencias.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;

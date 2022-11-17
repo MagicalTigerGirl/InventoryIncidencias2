@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias;
+package com.example.inventoryincidencias.ui;
 
 import static com.example.inventoryincidencias.R.id.action_LoginFragment_to_DashBoardFragment;
 import static com.example.inventoryincidencias.R.id.action_LoginFragment_to_SignUpFragment;

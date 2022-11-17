@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/SplashFragment"
-        android:name="com.example.inventoryincidencias.SplashFragment"
+        android:name="com.example.inventoryincidencias.ui.SplashFragment"
         android:label="@string/splash_fragment_label"
         tools:layout="@layout/fragment_splash">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.inventoryincidencias.LoginFragment"
+        android:name="com.example.inventoryincidencias.ui.LoginFragment"
         android:label="@string/login_fragment_label"
         tools:layout="@layout/fragment_login">
 
@@ -31,22 +31,29 @@
 
     <fragment
         android:id="@+id/SignUpFragment"
-        android:name="com.example.inventoryincidencias.SignUpFragment"
+        android:name="com.example.inventoryincidencias.ui.SignUpFragment"
         android:label="@string/signup_fragment_label"
         tools:layout="@layout/fragment_sign_up">
     </fragment>
     <fragment
         android:id="@+id/dashBoardFragment"
-        android:name="com.example.inventoryincidencias.DashBoardFragment"
+        android:name="com.example.inventoryincidencias.ui.DashBoardFragment"
         android:label="@string/dashboard_fragment_label"
         tools:layout="@layout/fragment_dash_board" >
         <action
             android:id="@+id/action_dashBoardFragment_to_settingInventoryFragment"
             app:destination="@id/settingInventoryFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_dependencyListFragment"
+            app:destination="@id/dependencyListFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingInventoryFragment"
-        android:name="com.example.inventoryincidencias.SettingInventoryFragment"
+        android:name="com.example.inventoryincidencias.ui.SettingInventoryFragment"
         android:label="fragment_setting_inventory"
         tools:layout="@layout/fragment_setting_inventory" />
+    <fragment
+        android:id="@+id/dependencyListFragment"
+        android:name="com.example.inventoryincidencias.ui.dependency.DependencyListFragment"
+        android:label="DependencyListFragment" />
 </navigation>

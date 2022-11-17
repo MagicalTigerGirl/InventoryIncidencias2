@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias;
+package com.example.inventoryincidencias.ui;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,13 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.inventoryincidencias.R;
 import com.example.inventoryincidencias.databinding.FragmentLoginBinding;
 import com.example.inventoryincidencias.databinding.FragmentSplashBinding;
 
 public class SplashFragment extends Fragment {
-
-    public SplashFragment() {
-    }
 
     private static final long WAIT_TIME = 2000;
     private FragmentSplashBinding binding;
