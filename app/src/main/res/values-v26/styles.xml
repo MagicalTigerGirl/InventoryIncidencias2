@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="InInTextInputLayout">
+        <item name="android:background">@drawable/shape_textinputlayout</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
+        <item name="boxStrokeColor">@color/color_secondary</item>
+        <item name="hintTextColor">@color/color_secondary</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="errorTextColor">@color/purple_200</item>
+        <item name="errorIconTint">@color/purple_200</item>
+    </style>
+</resources>
