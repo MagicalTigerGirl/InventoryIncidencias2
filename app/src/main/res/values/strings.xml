@@ -33,4 +33,5 @@
     <string name="tvActivated">Fecha de activación:</string>
     <string name="tvEnded">Fecha de finalización:</string>
     <string name="tvEdit">Edición</string>
+    <string name="errorPasswordFormat">Formato incorrecto de la contraseña</string>
 </resources>

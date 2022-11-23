@@ -38,6 +38,7 @@
             -->
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tieCorreoElectronico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/tilNombreUsuario"
@@ -46,7 +47,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/TextInputLayoutStyle"
+            style="@style/InInTextInputLayout"
             android:id="@+id/tilContrasena"
             app:errorEnabled="true"
             android:layout_width="match_parent"
@@ -56,6 +57,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -97,9 +99,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:onClick="@{() -> viewmodel.validateCredentials()}"
             android:layout_gravity="center_horizontal"
-            android:text="@string/btnLogin" />
+            android:text="@string/btnLogin"
+            android:onClick="@{() -> viewmodel.validateCredentials()}"/>
+
         <!--
         android:backgroundTint="@color/textInputLayout"
          -->

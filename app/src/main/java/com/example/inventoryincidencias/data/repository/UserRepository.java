@@ -24,7 +24,15 @@ public class UserRepository {
     public ArrayList<User> getList() { return list; }
 
     public void initialice() {
-        list.add(new User("mariamolinalorenzo@gmail.com", "26122003", "María", "Molina Lorenzo", 1));
+        list.add(new User("mariamolinalorenzo@gmail.com", "26122003Maria*", "María", "Molina Lorenzo", 1));
         list.add(new User("juan.inma.maria@hotmail.com", "26122003", "Juan", "Molina Albalá", 2));
+    }
+
+    // Comprobar si existe un usuario dentro de la lista
+    public boolean login(String email, String password) {
+        if (list.contains(new User(email, password)))
+            return true;
+        else
+            return false;
     }
 }

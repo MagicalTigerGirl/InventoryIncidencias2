@@ -55,6 +55,11 @@ public class User implements Comparable<Dependency>{
         this.image = image;
     }
 
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -62,12 +67,15 @@ public class User implements Comparable<Dependency>{
 
         User user = (User) o;
 
-        return getEmail() != null ? getEmail().equals(user.getEmail()) : user.getEmail() == null;
+        if (!getEmail().equals(user.getEmail())) return false;
+        return getPassword().equals(user.getPassword());
     }
 
     @Override
     public int hashCode() {
-        return getEmail() != null ? getEmail().hashCode() : 0;
+        int result = getEmail().hashCode();
+        result = 31 * result + getPassword().hashCode();
+        return result;
     }
 
     @Override

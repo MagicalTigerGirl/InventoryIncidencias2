@@ -10,8 +10,14 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvDependency"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
     </androidx.recyclerview.widget.RecyclerView>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/hasbulla_llorando"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

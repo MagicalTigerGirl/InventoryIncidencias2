@@ -36,7 +36,8 @@ public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.Vi
     }
 
     public DependencyAdapter(OnManageDependencyListener listener) {
-        this.list = DependencyRepository.getInstance().getList();
+        //this.list = DependencyRepository.getInstance().getList();         el adapter NO puede depender del repositorio
+        this.list = new ArrayList<>();
         this.listener = listener;
     }
 

@@ -2,4 +2,7 @@
 <resources>
     <!-- Errores del Login -->
     <string name="errorEmailEmpty">Email debe contener un valor</string>
+    <string name="errorEmailFormat">Formato incorrecto del email</string>
+    <string name="errorPasswordEmpty">Contraseña debe contener un valor</string>
+    <string name="errorLogin">Usuario no existe</string>
 </resources>

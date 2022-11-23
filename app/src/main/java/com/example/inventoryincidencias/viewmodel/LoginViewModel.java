@@ -1,9 +1,15 @@
 package com.example.inventoryincidencias.viewmodel;
 
 import android.text.TextUtils;
+import android.util.Patterns;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.inventoryincidencias.data.repository.UserRepository;
+import com.example.inventoryincidencias.utils.CommonUtils;
+
+import java.util.regex.Pattern;
 
 /**
  * Esta clase contiene:
@@ -32,7 +38,28 @@ public class LoginViewModel extends ViewModel {
         if (TextUtils.isEmpty(email.getValue()))
             // Se tiene que crear un LIVE DATA que englobe todos las posibles alternativas
             result.setValue(LoginResult.EMAILEMPTY);
+        else if (!Patterns.EMAIL_ADDRESS.matcher(email.getValue()).matches())
+            result.setValue(LoginResult.EMAILFORMAT);
+        else if (TextUtils.isEmpty(password.getValue()))
+            result.setValue(LoginResult.PASSWORDEMPTY);
+        else if (!CommonUtils.isPasswordValid(password.getValue()))
+            result.setValue(LoginResult.PASSWORDFORMAT);
 
+        // Se llama al método Login del repositorio
+        else
+            login();
+
+    }
+
+    /**
+     * Este método comprueba si el usuario existe en la BD o FireBase y devuelve (en este caso)
+     * un valor booleano
+     */
+    private void login() {
+        if (UserRepository.getInstance().login(email.getValue(), password.getValue()))
+            result.setValue(LoginResult.SUCCESS);
+        else
+            result.setValue(LoginResult.FAILURE);
     }
 
     /**
