@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias.viewmodel;
+package com.example.inventoryincidencias.ui.login;
 
 public enum LoginResult {
     EMAILEMPTY,

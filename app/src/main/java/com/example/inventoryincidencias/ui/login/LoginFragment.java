@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias.ui;
+package com.example.inventoryincidencias.ui.login;
 
 import static com.example.inventoryincidencias.R.id.action_LoginFragment_to_DashBoardFragment;
 import static com.example.inventoryincidencias.R.id.action_LoginFragment_to_SignUpFragment;
@@ -9,22 +9,17 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.inventoryincidencias.R;
 import com.example.inventoryincidencias.databinding.FragmentLoginBinding;
-import com.example.inventoryincidencias.databinding.FragmentSplashBinding;
 import com.example.inventoryincidencias.ui.base.BaseFragment;
-import com.example.inventoryincidencias.viewmodel.LoginResult;
-import com.example.inventoryincidencias.viewmodel.LoginViewModel;
 
 public class LoginFragment extends BaseFragment {
 

@@ -6,14 +6,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.inventoryincidencias.viewmodel.LoginViewModel" />
+            type="com.example.inventoryincidencias.ui.login.LoginViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.LoginFragment">
+        tools:context=".ui.login.LoginFragment">
 
         <TextView
             android:id="@+id/tvLogin"

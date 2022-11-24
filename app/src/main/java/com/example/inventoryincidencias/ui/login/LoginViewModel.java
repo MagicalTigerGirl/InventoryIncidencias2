@@ -1,4 +1,4 @@
-package com.example.inventoryincidencias.viewmodel;
+package com.example.inventoryincidencias.ui.login;
 
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -8,8 +8,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.inventoryincidencias.data.repository.UserRepository;
 import com.example.inventoryincidencias.utils.CommonUtils;
-
-import java.util.regex.Pattern;
 
 /**
  * Esta clase contiene:

@@ -102,4 +102,16 @@ public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.Vi
             });
         }
     }
+
+    /**
+     * Este método actualiza los datos del ArrayList interna del adapter
+     * @param data
+     */
+    public void update(ArrayList<Dependency> data) {
+        list.clear();
+        list.addAll(data);
+
+        // ¡¡ IMPORTANTE !! Si no se llama a este método no se actualiza el RECYCLERVIEW
+        notifyDataSetChanged();
+    }
 }
