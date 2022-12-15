@@ -1,0 +1,57 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:fragment="com.example.inventoryincidencias.ui.preferences.AccountFragment"
+        android:icon="@drawable/ic_account"
+        android:key="@string/key_account"
+        android:title="@string/title_account"
+        android:summary="@string/summary_account">
+
+    </Preference>
+
+    <PreferenceCategory
+        android:title="@string/header_notification">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:title="@string/title_active_notification"
+            android:key="@string/key_active_notification">
+
+        </SwitchPreferenceCompat>
+
+        <ListPreference
+            android:title="@string/title_rigntone"
+            android:key="@string/key_ringtone"
+            android:entries="@array/entries_ringtone"
+            android:entryValues="@array/values_ringtone">
+
+        </ListPreference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/header_help">
+
+        <Preference
+            android:title="@string/title_help_center"
+            android:key="@string/key_help_center">
+
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://faq.whatsapp.com/">
+            </intent>
+
+        </Preference>
+
+        <Preference
+            android:title="@string/title_privacy_condition"
+            android:key="@string/key_privacy_condition">
+
+            <intent android:action="android.intent.action.VIEW"
+                android:data="https://www.whatsapp.com/legal/privacy-policy/">
+            </intent>
+
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
