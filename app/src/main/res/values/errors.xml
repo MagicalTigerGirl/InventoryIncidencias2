@@ -5,4 +5,8 @@
     <string name="errorEmailFormat">Formato incorrecto del email</string>
     <string name="errorPasswordEmpty">Contraseña debe contener un valor</string>
     <string name="errorLogin">Usuario no existe</string>
+    <string name="errorNameEmpty">Nombre debe contener un valor</string>
+    <string name="errorShortNameEmpty">Nombre corto debe contener un valor</string>
+    <string name="errorShortNameFormat">Nombre corto debe contener un formato de tres caracteres</string>
+    <string name="errorDuplicate">Ya existe una dependencia con estos valores</string>
 </resources>

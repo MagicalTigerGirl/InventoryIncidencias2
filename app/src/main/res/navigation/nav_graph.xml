@@ -3,8 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/dashBoardFragment">
+    app:startDestination="@id/SplashFragment">
 
+    <!-- No debe volver al fragment Splash si le doy a la flecha Back,
+     para ello ponemos popUpTo y popUpToInclusive-->
     <fragment
         android:id="@+id/SplashFragment"
         android:name="com.example.inventoryincidencias.ui.SplashFragment"
@@ -13,7 +15,14 @@
 
         <action
             android:id="@+id/action_SplashFragment_to_LoginFragment"
+            app:popUpTo="@id/SplashFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_SplashFragment_to_dashBoardFragment"
+            app:popUpTo="@id/SplashFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/dashBoardFragment" />
     </fragment>
     <fragment
         android:id="@+id/LoginFragment"
@@ -46,6 +55,9 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_dependencyListFragment"
             app:destination="@id/dependencyListFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_sectionFragment"
+            app:destination="@id/sectionFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingInventoryFragment"
@@ -55,5 +67,30 @@
     <fragment
         android:id="@+id/dependencyListFragment"
         android:name="com.example.inventoryincidencias.ui.dependency.DependencyListFragment"
-        android:label="DependencyListFragment" />
+        android:label="DependencyListFragment" >
+        <action
+            android:id="@+id/action_dependencyListFragment_to_createDependencyFragment"
+            app:destination="@id/createDependencyFragment" />
+        <action
+            android:id="@+id/action_dependencyListFragment_to_baseFragmentDialog"
+            app:destination="@id/baseFragmentDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/sectionFragment"
+        android:name="com.example.inventoryincidencias.ui.section.SectionFragment"
+        android:label="fragment_section"
+        tools:layout="@layout/fragment_section" />
+    <fragment
+        android:id="@+id/createDependencyFragment"
+        android:name="com.example.inventoryincidencias.ui.CreateDependencyFragment"
+        android:label="fragment_create_dependency"
+        tools:layout="@layout/fragment_create_dependency" />
+    <dialog
+        android:id="@+id/baseFragmentDialog"
+        android:name="com.example.inventoryincidencias.ui.base.BaseFragmentDialog"
+        android:label="BaseFragmentDialog" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.inventoryincidencias.ui.preferences.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

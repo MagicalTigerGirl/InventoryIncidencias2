@@ -40,6 +40,7 @@ public class DashBoardFragment extends Fragment {
 
         binding.imbInventario.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_dashBoardFragment_to_settingInventoryFragment));
         binding.imbDependencia.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_dashBoardFragment_to_dependencyListFragment));
+        binding.imbSecciones.setOnClickListener(view1 -> NavHostFragment.findNavController(this).navigate(R.id.action_dashBoardFragment_to_sectionFragment));
     }
 
     @Override

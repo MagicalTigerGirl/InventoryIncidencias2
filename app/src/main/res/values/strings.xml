@@ -34,4 +34,47 @@
     <string name="tvEnded">Fecha de finalización:</string>
     <string name="tvEdit">Edición</string>
     <string name="errorPasswordFormat">Formato incorrecto de la contraseña</string>
+    <string name="tvCreateDependency">Crear dependencia</string>
+    <string name="tilCreateDependencyName">Nombre de la nueva dependencia</string>
+    <string name="tilCreateDependencyShortName">Nombre corto de la nueva dependencia</string>
+    <string name="btnCreateDependency">CREAR DEPENDENCIA</string>
+    <string name="tilCreateDependencyDescription">Descripción de la nueva dependencia</string>
+    <string name="tilCreateDependencyImage">Imagen de la nueva dependencia</string>
+    <string name="title_delete_dependency">Eliminar dependencia</string>
+    <string name="message_delete">¿Quiere eliminar el elemento %1$s?</string>
+    <string name="undo">Deshacer</string>
+    <string name="action_dependency_orderById">Ordenar por Id</string>
+    <string name="action_logout">Cerrar sesión cuenta</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_account">Cuenta</string>
+    <string name="summary_account">Notificaciones de seguridad, cambiar número</string>
+    <string name="key_account">account</string>
+    <string name="key_email">email</string>
+    <string name="key_password">password</string>
+    <string name="title_password">Password</string>
+    <string name="title_email">Email</string>
+    <string name="header_account">Información de la cuenta</string>
+    <string name="header_help">Opciones de ayuda</string>
+    <string name="title_help_center">Centro de ayuda</string>
+    <string name="key_help_center">help_center</string>
+    <string name="title_privacy_condition">Política de privacidad</string>
+    <string name="key_privacy_condition">privacy_condition</string>
+    <string name="key_active_notification">active_notification</string>
+    <string name="header_notification">Notificaciones</string>
+    <string name="title_active_notification">Notificaciones activadas</string>
+    <string name="title_rigntone">Tonos de notificaciones</string>
+    <string name="key_ringtone">ringtone</string>
 </resources>

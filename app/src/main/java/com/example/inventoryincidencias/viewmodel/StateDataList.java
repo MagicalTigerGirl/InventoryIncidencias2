@@ -1,5 +1,9 @@
 package com.example.inventoryincidencias.viewmodel;
 
+import com.example.inventoryincidencias.data.model.DependencyComparatorId;
+
+import java.util.Collections;
+
 public class StateDataList<T>{
 
     // Enumerado que contiene los diferentes estados de la vista
@@ -8,7 +12,8 @@ public class StateDataList<T>{
         LOADING,
         NODATA,
         SUCCESS,
-        COMPLETE
+        COMPLETE,
+        ORDER_BY_ID
     }
     private DataState state;
     // Los datos son de cualquier tipo <T>
@@ -41,6 +46,12 @@ public class StateDataList<T>{
 
     public StateDataList<T> complete() {
         this.state = DataState.COMPLETE;
+        return this;
+    }
+
+    public StateDataList<T> orderById(T data) {
+        this.state = DataState.ORDER_BY_ID;
+        this.data = data;
         return this;
     }
 

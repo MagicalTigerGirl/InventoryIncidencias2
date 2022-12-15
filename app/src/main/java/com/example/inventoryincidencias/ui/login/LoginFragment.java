@@ -20,6 +20,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.inventoryincidencias.R;
 import com.example.inventoryincidencias.databinding.FragmentLoginBinding;
 import com.example.inventoryincidencias.ui.base.BaseFragment;
+import com.example.inventoryincidencias.ui.preferences.UserPrefManager;
 
 public class LoginFragment extends BaseFragment {
 
@@ -69,6 +70,7 @@ public class LoginFragment extends BaseFragment {
                         showError(getString(R.string.errorLogin));
                         break;
                     case SUCCESS:
+                        showUserPref();
                         showDashBoard();
                         break;
                 }
@@ -83,6 +85,15 @@ public class LoginFragment extends BaseFragment {
         // Se establece el objeto loginTextWatcher a las vistas Editable
         binding.tieCorreoElectronico.addTextChangedListener(new LoginTextWatcher(binding.tieCorreoElectronico));
         binding.tiePassword.addTextChangedListener(new LoginTextWatcher(binding.tiePassword));
+    }
+
+    /**
+     * Este método comprueba si el usuario ha seleccionado el checkbox Recuerdame
+     * y se guarda la información del usuario.
+     */
+    private void showUserPref() {
+        if (binding.checkBoxRecuerdame.isChecked())
+            new UserPrefManager(getContext()).login(binding.tieCorreoElectronico.getText().toString());
     }
 
     //region Métodos ALTERNATIVAS y EXITO del viewModel

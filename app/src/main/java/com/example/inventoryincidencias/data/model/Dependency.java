@@ -1,18 +1,62 @@
 package com.example.inventoryincidencias.data.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Dependency implements Comparable<Dependency> {
+public class Dependency implements Comparable<Dependency>, Serializable, Parcelable {
+    private int id;
     private String name;
     private String shortName;
     private String description;
     private String imageName;
+
+    public Dependency() {
+    }
+
+    public Dependency(int id, String name, String shortName, String description, String imageName) {
+        this.id = id;
+        this.name = name;
+        this.shortName = shortName;
+        this.description = description;
+        this.imageName = imageName;
+    }
 
     public Dependency(String name, String shortName, String description, String imageName) {
         this.name = name;
         this.shortName = shortName;
         this.description = description;
         this.imageName = imageName;
+    }
+
+    protected Dependency(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        shortName = in.readString();
+        description = in.readString();
+        imageName = in.readString();
+    }
+
+    public static final Creator<Dependency> CREATOR = new Creator<Dependency>() {
+        @Override
+        public Dependency createFromParcel(Parcel in) {
+            return new Dependency(in);
+        }
+
+        @Override
+        public Dependency[] newArray(int size) {
+            return new Dependency[size];
+        }
+    };
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -54,20 +98,35 @@ public class Dependency implements Comparable<Dependency> {
 
         Dependency that = (Dependency) o;
 
-        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null)
-            return false;
-        return getShortName() != null ? getShortName().equals(that.getShortName()) : that.getShortName() == null;
+        return getShortName().equals(that.getShortName());
     }
 
     @Override
     public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + (getShortName() != null ? getShortName().hashCode() : 0);
-        return result;
+        return getShortName().hashCode();
     }
 
     @Override
     public int compareTo(Dependency dependency) {
         return this.getName().compareTo(dependency.getName());
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeString(name);
+        parcel.writeString(shortName);
+        parcel.writeString(description);
+        parcel.writeString(imageName);
+    }
+
+    public Dependency clone() {
+        Dependency d = new Dependency(this.id, this.name, this.shortName, this.description, this.imageName);
+        return d;
     }
 }

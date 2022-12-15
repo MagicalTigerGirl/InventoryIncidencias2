@@ -13,6 +13,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.inventoryincidencias.R;
 import com.example.inventoryincidencias.databinding.FragmentLoginBinding;
 import com.example.inventoryincidencias.databinding.FragmentSplashBinding;
+import com.example.inventoryincidencias.ui.preferences.UserPrefManager;
 
 public class SplashFragment extends Fragment {
 
@@ -20,10 +21,7 @@ public class SplashFragment extends Fragment {
     private FragmentSplashBinding binding;
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
+    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentSplashBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -46,7 +44,12 @@ public class SplashFragment extends Fragment {
         },WAIT_TIME);*/
 
         // Lambda
-        new Handler().postDelayed(() -> NavHostFragment.findNavController(SplashFragment.this).navigate(R.id.LoginFragment),WAIT_TIME);
+        new Handler().postDelayed(() -> {
+            if (new UserPrefManager(getContext()).isUserLogin())
+                NavHostFragment.findNavController(SplashFragment.this).navigate(R.id.action_SplashFragment_to_dashBoardFragment);
+            else
+                NavHostFragment.findNavController(SplashFragment.this).navigate(R.id.action_SplashFragment_to_LoginFragment);
+        },WAIT_TIME);
     }
 
     @Override

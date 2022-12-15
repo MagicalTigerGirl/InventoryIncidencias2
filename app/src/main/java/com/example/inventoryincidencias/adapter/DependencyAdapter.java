@@ -16,6 +16,7 @@ import com.example.inventoryincidencias.databinding.ItemDependencyBinding;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.ViewHolder> {
 
@@ -77,7 +78,7 @@ public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.Vi
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         CircularImageView imgIcon;
         TextView tvName;
         ItemDependencyBinding binding;
@@ -110,8 +111,30 @@ public class DependencyAdapter extends RecyclerView.Adapter<DependencyAdapter.Vi
     public void update(ArrayList<Dependency> data) {
         list.clear();
         list.addAll(data);
+        Collections.sort(list);
 
         // ¡¡ IMPORTANTE !! Si no se llama a este método no se actualiza el RECYCLERVIEW
         notifyDataSetChanged();
     }
+
+    /**
+     * Este método actualiza los datos del ArrayList interno del adapter ocn los datos ordenados por el ID
+     */
+    public void orderById(ArrayList<Dependency> data) {
+        list.clear();
+        list.addAll(data);
+
+        notifyDataSetChanged();
+    }
+
+    public void delete(Dependency dependency) {
+        list.remove(dependency);
+        notifyDataSetChanged();
+    }
+
+    public void undo(Dependency deleteDependency) {
+        list.add(deleteDependency);
+        notifyDataSetChanged();
+    }
+
 }

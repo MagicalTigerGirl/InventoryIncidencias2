@@ -25,4 +25,8 @@ public class StateLiveDataList<T> extends MutableLiveData<StateDataList<T>> {
     public void setComplete() {
         setValue(new StateDataList<T>().complete());
     }
+
+    public void setOrderById(T data) {
+        setValue(new StateDataList<T>().orderById(data));
+    }
 }

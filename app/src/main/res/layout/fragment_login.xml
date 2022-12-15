@@ -71,14 +71,13 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:id="@+id/checkBox"
-                android:background="@drawable/selector_button_login"
+                android:id="@+id/checkBoxRecuerdame"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginHorizontal="40dp"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/textInputLayout"
-                android:text="CheckBox" />
+                android:text="Recuerdame" />
 
             <Button
                 style="@style/ButtonTransparent.TextColor"

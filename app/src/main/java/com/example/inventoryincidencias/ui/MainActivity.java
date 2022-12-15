@@ -1,8 +1,11 @@
 package com.example.inventoryincidencias.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.inventoryincidencias.R;
+import com.example.inventoryincidencias.ui.preferences.UserPrefManager;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -34,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        //appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.SplashFragment, R.id.dashBoardFragment, R.id.LoginFragment).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
     }
 
@@ -54,6 +60,18 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // Con esta opción accedo al fichero por defecto de las preferencias que se llaman com.moronlu18.inin_preferences.xml
+            //SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
+
+            // Acceder a las preferencias por defecto desde un fragment
+            //SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.settingsFragment);
+            return true;
+        }
+
+        if (id == R.id.action_logout) {
+            new UserPrefManager(this).logout();
+            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.LoginFragment);
             return true;
         }
 

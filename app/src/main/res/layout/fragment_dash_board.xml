@@ -41,12 +41,12 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:id="@+id/imbIncidencias"
+            android:id="@+id/imbSecciones"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:scaleType="fitCenter"
             android:contentDescription="@string/action_dashboard"
-            android:src="@drawable/incidencias" />
+            android:src="@drawable/secciones" />
         <View
             android:layout_height="20dp"
             android:layout_width="20dp"/>
