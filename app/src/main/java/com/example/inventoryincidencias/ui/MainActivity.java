@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import androidx.navigation.NavController;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -71,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.action_logout) {
             new UserPrefManager(this).logout();
-            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.LoginFragment);
+            /** Si cerramos sesión y le damos back volveríamos al fragment anterior. Para que esto no funcione debemos implementar las opciones popUpTo,
+             * pero como no sabemos desde que fragment navegaremos no podemos implementarlo como hemos hecho con el SplashFragment,
+             * debemos añadírselo en tiempo de ejecución
+             */
+            NavOptions navOptions = new NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).setLaunchSingleTop(true).build();
+            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.LoginFragment, null, navOptions);
             return true;
         }
 

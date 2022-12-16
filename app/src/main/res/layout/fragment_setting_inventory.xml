@@ -25,14 +25,14 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imbCalendar4"
+        android:id="@+id/imbCreateCalendar"
         android:layout_width="@dimen/imgCalendar"
         android:layout_height="@dimen/imgCalendar"
         android:scaleType="centerCrop"
         android:src="@drawable/calendario"
         app:layout_constraintBottom_toBottomOf="@+id/editTextDate5"
         app:layout_constraintEnd_toStartOf="@+id/glEndSettingInventory"
-        app:layout_constraintTop_toTopOf="@+id/editTextDate5" />
+        app:layout_constraintTop_toTopOf="@+id/etFechaCreacion" />
 
     <ImageButton
         android:id="@+id/imbCalendar3"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toTopOf="@+id/editTextDate3" />
 
     <EditText
-        android:id="@+id/editTextDate5"
+        android:id="@+id/etFechaCreacion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -63,7 +63,7 @@
         android:inputType="date"
         android:minHeight="48dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvCreated"
-        app:layout_constraintEnd_toStartOf="@+id/imbCalendar4"
+        app:layout_constraintEnd_toStartOf="@+id/imbCreateCalendar"
         app:layout_constraintStart_toEndOf="@+id/barrier" />
 
     <EditText
