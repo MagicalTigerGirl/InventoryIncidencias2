@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 public class Dependency implements Comparable<Dependency>, Serializable, Parcelable {
+    public static final String TAG = "dependency";
     private int id;
     private String name;
     private String shortName;
