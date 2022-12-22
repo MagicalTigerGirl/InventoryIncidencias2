@@ -5,13 +5,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.inventoryincidencias.R;
+import com.example.inventoryincidencias.ui.login.LoginFragment;
 import com.example.inventoryincidencias.ui.preferences.UserPrefManager;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
@@ -24,10 +28,14 @@ import com.example.inventoryincidencias.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,52 +44,73 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
+        setSupportActionBar(binding.contentMain.toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_action_menu);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        //appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+
+        // OPCION 2: MOSRTAR LOS NIVELES DE FRAGMENTS PARA QUE NO SE MUESTRE LA FLECHA
+        Set<Integer> topLevelDestination = new HashSet<>();
+        topLevelDestination.add(R.id.dashBoardFragment);
+        topLevelDestination.add(R.id.sectionFragment);
+        topLevelDestination.add(R.id.dependencyListFragment);
+
+        // Con este método gestionamos la BARRA DE ACCIÓN, cuando hay varios niveles de navegación
+        // OPCIÓN 1
+        /*appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.SplashFragment, R.id.dashBoardFragment, R.id.LoginFragment).setOpenableLayout(binding.drawerLayout).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);*/
+
+        // OPCION 2
         appBarConfiguration =
-                new AppBarConfiguration.Builder(R.id.SplashFragment, R.id.dashBoardFragment, R.id.LoginFragment).build();
+                new AppBarConfiguration.Builder(topLevelDestination).setOpenableLayout(binding.drawerLayout).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // A continuación se configura las opciones del componente NavigationView
+        setUpNavigationView();
+    }
+
+    /**
+     * Este método configura los eventos del menú de NavigationView a través del listener
+     */
+    private void setUpNavigationView() {
+        binding.navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dependencyListFragment:
+                        navController.navigate(R.id.dependencyListFragment);
+                        break;
+                    case R.id.sectionFragment:
+                        navController.navigate(R.id.sectionFragment);
+                        break;
+                    case R.id.settingInventoryFragment:
+                        navController.navigate(R.id.settingInventoryFragment);
+                        break;
+                    case R.id.settingsFragment:
+                        navController.navigate(R.id.settingsFragment);
+                        break;
+                    case R.id.action_logout:
+                        // Al añadir el menú y no ser parte del Splash, ni Login, ni SignUp estos Fragments no deben ser fragment de MainActivity.
+                        // Son Activity ya independientes
+                        //startActivity(MainActivity.this, LoginActivity.class);
+                        break;
+                }
+                binding.drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+
+        });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            // Con esta opción accedo al fichero por defecto de las preferencias que se llaman com.moronlu18.inin_preferences.xml
-            //SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-
-            // Acceder a las preferencias por defecto desde un fragment
-            //SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.settingsFragment);
-            return true;
-        }
-
-        if (id == R.id.action_logout) {
-            new UserPrefManager(this).logout();
-            /** Si cerramos sesión y le damos back volveríamos al fragment anterior. Para que esto no funcione debemos implementar las opciones popUpTo,
-             * pero como no sabemos desde que fragment navegaremos no podemos implementarlo como hemos hecho con el SplashFragment,
-             * debemos añadírselo en tiempo de ejecución
-             */
-            NavOptions navOptions = new NavOptions.Builder().setPopUpTo(R.id.nav_graph, true).setLaunchSingleTop(true).build();
-            Navigation.findNavController(this, R.id.nav_host_fragment_content_main).navigate(R.id.LoginFragment, null, navOptions);
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void onBackPressed() {
+        // binding.drawerLayout.isOpen()
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
+        else // Dejamos que el sistema operativo decida qué hacer
+            super.onBackPressed();
     }
 
     @Override

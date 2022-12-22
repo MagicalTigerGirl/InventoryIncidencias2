@@ -3,13 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.inventoryincidencias.ui.MainActivity">
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />             <!-- Que salga con icono -->
+        android:id="@+id/dependencyListFragment"
+        android:title="DependencyListFragment" />
+    <item
+        android:id="@+id/sectionFragment"
+        android:title="SectionFragment" />
+    <item
+        android:id="@+id/createDependencyFragment"
+        android:title="CreateDependencyFragment" />
+    <item
+        android:id="@+id/settingInventoryFragment"
+        android:title="SettingInventoryFragment" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:title="SettingsFragment" />             <!-- Que salga con icono -->
     <item
         android:id="@+id/action_logout"
-        android:orderInCategory="90"
-        android:title="@string/action_logout"
-        app:showAsAction="never" />
+        android:title="@string/action_logout" />
 </menu>
