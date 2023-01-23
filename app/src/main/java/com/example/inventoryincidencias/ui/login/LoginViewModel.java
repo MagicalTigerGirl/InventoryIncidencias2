@@ -6,6 +6,7 @@ import android.util.Patterns;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.inventoryincidencias.data.model.User;
 import com.example.inventoryincidencias.data.repository.UserRepository;
 import com.example.inventoryincidencias.utils.CommonUtils;
 
@@ -24,6 +25,9 @@ public class LoginViewModel extends ViewModel {
     // Los siguientes LiveData tendrán observadores en la Activity/Fragment y se debe implementar un método de obtención
     private MutableLiveData<Boolean> errorEmailEmpty;
     private MutableLiveData<LoginResult> result;
+
+    // Firebase. El viewModel no comprueba si el usuario es correcto o no
+    private MutableLiveData<User> userMutableLiveData = UserRepository.getInstance().getUserLiveData();
 
     // el get() y el set() lo hace el DataBinding
 
@@ -54,10 +58,14 @@ public class LoginViewModel extends ViewModel {
      * un valor booleano
      */
     private void login() {
-        if (UserRepository.getInstance().login(email.getValue(), password.getValue()))
+        // NO firebase
+        /*if (UserRepository.getInstance().login(email.getValue(), password.getValue()))
             result.setValue(LoginResult.SUCCESS);
         else
-            result.setValue(LoginResult.FAILURE);
+            result.setValue(LoginResult.FAILURE);*/
+
+        // Firebase
+        UserRepository.getInstance().login(email.getValue(), password.getValue());
     }
 
     /**
@@ -68,5 +76,12 @@ public class LoginViewModel extends ViewModel {
         if (result==null)
             result=new MutableLiveData<>();
         return result;
+    }
+
+    // Firebase. Getter del userMutableLiveData
+    public MutableLiveData<User> getUserMutableLiveData() {
+        if (userMutableLiveData == null)
+            userMutableLiveData = new MutableLiveData<>();
+        return userMutableLiveData;
     }
 }

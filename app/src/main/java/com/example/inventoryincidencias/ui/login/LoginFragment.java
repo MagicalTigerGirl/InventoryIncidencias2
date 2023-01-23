@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.inventoryincidencias.R;
+import com.example.inventoryincidencias.data.model.User;
 import com.example.inventoryincidencias.databinding.FragmentLoginBinding;
 import com.example.inventoryincidencias.ui.base.BaseFragment;
 import com.example.inventoryincidencias.ui.preferences.UserPrefManager;
@@ -75,6 +76,13 @@ public class LoginFragment extends BaseFragment {
                         break;
                 }
                 Toast.makeText(getContext(), "Valor de Error "+value, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        viewModel.getUserMutableLiveData().observe(getViewLifecycleOwner(), new Observer<User>() {
+            @Override
+            public void onChanged(User user) {
+
             }
         });
 

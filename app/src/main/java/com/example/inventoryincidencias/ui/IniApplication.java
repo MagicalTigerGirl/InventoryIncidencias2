@@ -7,6 +7,8 @@ import android.os.Build;
 
 import com.example.inventoryincidencias.R;
 
+import java.util.concurrent.Executor;
+
 /**
  * Esta clase se ejecuta antes que cualquier Activity, y es accesible desde todos los Activitys del proyecto.
  */
