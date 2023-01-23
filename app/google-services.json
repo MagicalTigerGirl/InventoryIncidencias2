@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "356630799620",
+    "project_id": "inventoryincidencias2",
+    "storage_bucket": "inventoryincidencias2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356630799620:android:d6808791b2080e2ebadc51",
+        "android_client_info": {
+          "package_name": "com.example.inventoryincidencias"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356630799620-jk7lhur93i5ir6j3b0787qggo6ilske3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-aU48Spd8j02B93nRfqExEmSRp9XFMvU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356630799620-jk7lhur93i5ir6j3b0787qggo6ilske3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
